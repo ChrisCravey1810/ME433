@@ -1,14 +1,22 @@
 // initialize SPI1
+#include "spi.h"
 void initSPI() {
     // Pin B14 has to be SCK1
     // Turn of analog pins
+    ANSELB = 0;
     //...
     // Make an output pin for CS
+    TRISACLR = 0b11; // B4 and B5 LEDs
+   
+    TRISAbits.TRISA0 = 0;
+    LATAbits.LATA0 = 1;
+    
     //...
-    //...
-    // Set SDO1
+    // Set SDO1'
+    RPA1Rbits.RPA1R = 0b0011;
     //...
     // Set SDI1
+    SDI1Rbits.SDI1R = 0b0001;
     //...
 
     // setup SPI1
@@ -18,12 +26,15 @@ void initSPI() {
     SPI1STATbits.SPIROV = 0; // clear the overflow bit
     SPI1CONbits.CKE = 1; // data changes when clock goes from hi to lo (since CKP is 0)
     SPI1CONbits.MSTEN = 1; // master operation
+    SPI1CONbits.MODE16 = 1;
     SPI1CONbits.ON = 1; // turn on spi 
 }
 
+func();
+
 
 // send a byte via spi and return the response
-unsigned char spi_io(unsigned char o) {
+unsigned short spi_io(unsigned short o) {
   SPI1BUF = o;
   while(!SPI1STATbits.SPIRBF) { // wait to receive the byte
     ;
