@@ -6,6 +6,6 @@
 #include <stdio.h>
 
 void initSPI();
-unsigned short spi_io(unsigned short o);
+unsigned char spi_io(unsigned char o);
 
 #endif // SPI__H__
