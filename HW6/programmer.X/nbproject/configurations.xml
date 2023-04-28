@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>nu32dip.h</itemPath>
       <itemPath>spi.h</itemPath>
+      <itemPath>i2c_master_noint.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -18,6 +19,7 @@
       <itemPath>nu32dip.c</itemPath>
       <itemPath>template.c</itemPath>
       <itemPath>spi.c</itemPath>
+      <itemPath>i2c_master_noint.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

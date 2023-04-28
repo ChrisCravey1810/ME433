@@ -30,7 +30,6 @@ void initSPI() {
     SPI1CONbits.ON = 1; // turn on spi 
 }
 
-func();
 
 
 // send a byte via spi and return the response
