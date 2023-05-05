@@ -49,7 +49,7 @@ int main(void) {
         t = conv_temp(d);
         
         // print out the data
-        sprintf(m,"%f\r\n", ax);
+        sprintf(m,"%f\r\n", az);
         NU32DIP_WriteUART1(m);
 //        sprintf(m,"%f\r\n", ay);
 //        NU32DIP_WriteUART1(m);
